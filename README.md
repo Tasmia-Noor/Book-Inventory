@@ -26,17 +26,8 @@ $ npm run start:prod
 ```
 
 ## Test
+Test the APIs with swagger or postman
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
 ## Using Swagger Documentation
 This project utilizes Swagger to provide interactive API documentation and enable testing directly within the browser.
 
@@ -58,3 +49,39 @@ Swagger UI provides a convenient way to test your API endpoints directly from th
 4. View the response code and payload
 
 This allows you to quickly test your API functionality and verify expected behavior.
+Here are some more examples of how to use your API endpoints.
+1. Method: GET
+Endpoint: /books
+Expected Response:
+{
+  "success": true,
+  "message": "Books retrieved successfully!",
+  "count":1
+  "data": [{
+    "_id": "64c49587f73672058648796d",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "price": 19.99
+  }]
+}
+
+2. Method: POST
+Endpoint: /books
+Request Body:
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "price": 19.99
+}
+
+Expected Response:
+{
+  "success": true,
+  "message": "Book has been added successfully.",
+  "data": {
+    "_id": "64c49587f73672058648796d",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "price": 19.99
+  }
+}
